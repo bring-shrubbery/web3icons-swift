@@ -54,7 +54,7 @@ holes correctly. Concretely this means:
 ## Public API
 
 A single flat enum with category-prefixed cases, mirroring web3icons' own React component naming
-(`TokenBTC`, `NetworkEthereum`, `WalletMetamask`, `ExchangeBybit`).
+(`TokenBTC`, `NetworkEthereum`, `WalletPhantom`, `ExchangeUniswap`).
 
 ```swift
 import SwiftUI
@@ -65,8 +65,8 @@ Web3Icons(.tokenBTC)
     .frame(width: 32, height: 32)
 
 Web3Icons(.networkEthereum)
-Web3Icons(.walletMetamask)
-Web3Icons(.exchangeBybit)
+Web3Icons(.walletPhantom)
+Web3Icons(.exchangeUniswap)
 
 // Runtime string lookup (e.g. dynamic UIs):
 Web3Icons("token/BTC")        // -> Web3Icons?  (nil if unknown)
@@ -84,8 +84,8 @@ public struct Web3Icons: View {
 public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenBTC = "token/BTC"
     case networkEthereum = "network/ethereum"
-    case walletMetamask = "wallet/metamask"
-    case exchangeBybit = "exchange/bybit"
+    case walletPhantom = "wallet/phantom"
+    case exchangeUniswap = "exchange/uniswap"
     // … ~1,810 cases
 
     func makePath(in rect: CGRect) -> Path    // internal: switch over cases -> StructName().path(in:)
@@ -100,14 +100,14 @@ public enum Web3Icon: String, CaseIterable, Sendable {
 For an icon with upstream `category` (singular: `token`/`network`/`wallet`/`exchange`) and `name`:
 
 - **Per-icon Shape struct name** = `PascalCase(category)` + `PascalCase(name)`.
-  Examples: `TokenBTC`, `Token1INCH`, `NetworkEthereum`, `NetworkBinanceSmartChain`,
-  `WalletCoinbaseWallet`, `ExchangeBybit`. `PascalCase` only uppercases the first letter of each
+  Examples: `TokenBTC`, `Token1INCH`, `NetworkEthereum`, `NetworkAmeChain`,
+  `WalletMyEtherWallet`, `Exchange1Inch`. `PascalCase` only uppercases the first letter of each
   `-`-delimited segment, so all-caps tickers like `BTC`/`1INCH`/`0X0` pass through unchanged.
 - **Enum case name** = `category` (lowercase) + `PascalCase(name)`.
-  Examples: `tokenBTC`, `token1INCH`, `networkEthereum`, `networkBinanceSmartChain`,
-  `walletCoinbaseWallet`, `exchangeBybit`.
+  Examples: `tokenBTC`, `token1INCH`, `networkEthereum`, `networkAmeChain`,
+  `walletMyEtherWallet`, `exchange1Inch`.
 - **Raw value** = `"<category>/<name>"` preserving upstream casing.
-  Examples: `"token/BTC"`, `"network/ethereum"`, `"wallet/metamask"`, `"exchange/bybit"`.
+  Examples: `"token/BTC"`, `"network/ethereum"`, `"wallet/phantom"`, `"exchange/1inch"`.
 
 The category prefix dissolves two upstream naming hazards: tokens whose names start with a digit
 (e.g. `1INCH`, `0X0`) become valid Swift identifiers, and cross-category collisions (the exchange
@@ -215,5 +215,12 @@ web3icons-swift/
   `svg-to-swiftui-core`'s contour-reversal handles the common cases, but visual correctness across all
   ~1,810 icons is verified by the committed snapshot baselines — review the recorded PNGs during the
   first generation to spot any mis-filled holes.
+- **Unsupported SVG features (4 icons)**: exactly 4 of ~1,810 mono icons (`networks/apechain`,
+  `tokens/APE`, `wallets/rabby`, `wallets/token-pocket`) ship a `<defs>` block (clipPath or
+  gradient). `svg-to-swiftui-core` emits a stderr warning for `<defs>` but still converts the visible
+  `<path>` elements into substantial non-empty paths (41–160 draw commands each). The gradients are
+  irrelevant for mono (single foreground color) and the clipPaths are cosmetic, so these icons are
+  **included** — no exclusion list is needed. Their snapshot baselines should get an extra glance on
+  first recording.
 - **Volume**: ~1,810 generated Swift files plus ~1,810 PNG baselines is large but matches lucide-swift
   (1,711 today) and is generated/committed mechanically.
