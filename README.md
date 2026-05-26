@@ -77,11 +77,18 @@ if let icon = Web3Icons("token/BTC") {
 
 `Tools/generate-icons.mjs` installs [`@web3icons/core`](https://www.npmjs.com/package/@web3icons/core) and [`svg-to-swiftui-core`](https://github.com/bring-shrubbery/SVG-to-SwiftUI), converts every mono SVG into a Swift `Shape`, and writes the `Web3Icon` enum. Run `node Tools/generate-icons.mjs --help` for usage.
 
+## Support
+
+If `web3icons-swift` is useful to you, two ways to say thanks:
+
+- Star the repo on GitHub: [bring-shrubbery/web3icons-swift](https://github.com/bring-shrubbery/web3icons-swift)
+- Follow the author on X for updates: [@bringshrubberyy](https://x.com/bringshrubberyy)
+
 ## Credits
 
-- Icons: [web3icons](https://github.com/0xa3k5/web3icons) by 0xa3k5 (MIT).
-- SVG → SwiftUI conversion: [svg-to-swiftui](https://github.com/bring-shrubbery/SVG-to-SwiftUI).
+- [**web3icons**](https://github.com/0xa3k5/web3icons) by [0xa3k5](https://github.com/0xa3k5) — the icon set itself: crypto tokens, networks, wallets, and exchanges, licensed MIT. This package would not exist without that work.
+- [**SVG to SwiftUI**](https://github.com/bring-shrubbery/svg-to-swiftui) by [bring-shrubbery](https://github.com/bring-shrubbery) — the converter that turns each SVG into a SwiftUI `Shape`. Its `svg-to-swiftui-core` package powers the `Tools/generate-icons.mjs` pipeline that produces every file under `Sources/Web3Icons/Icons/`.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+This Swift package is licensed under the MIT License — see [LICENSE](LICENSE). The upstream [web3icons](https://github.com/0xa3k5/web3icons) icon set is also MIT licensed.
