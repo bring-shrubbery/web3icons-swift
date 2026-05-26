@@ -366,8 +366,15 @@ test('makeIdentifiers: kebab network', () => {
 })
 
 test('makeIdentifiers: category prefix disambiguates cross-category clashes', () => {
-  assert.equal(makeIdentifiers('exchanges', '1inch').structName, 'Exchange1Inch')
+  // toPascalCase only uppercases the first char of each "-" segment, so a
+  // leading digit leaves the rest of the segment as-is ("1inch" -> "1inch").
+  // The exchange and the token still get distinct, valid identifiers.
+  assert.equal(makeIdentifiers('exchanges', '1inch').structName, 'Exchange1inch')
   assert.equal(makeIdentifiers('tokens', '1INCH').structName, 'Token1INCH')
+  assert.notEqual(
+    makeIdentifiers('exchanges', '1inch').structName,
+    makeIdentifiers('tokens', '1INCH').structName
+  )
 })
 
 test('makeIdentifiers: unknown category throws', () => {

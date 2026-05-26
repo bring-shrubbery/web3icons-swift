@@ -101,11 +101,12 @@ For an icon with upstream `category` (singular: `token`/`network`/`wallet`/`exch
 
 - **Per-icon Shape struct name** = `PascalCase(category)` + `PascalCase(name)`.
   Examples: `TokenBTC`, `Token1INCH`, `NetworkEthereum`, `NetworkAmeChain`,
-  `WalletMyEtherWallet`, `Exchange1Inch`. `PascalCase` only uppercases the first letter of each
-  `-`-delimited segment, so all-caps tickers like `BTC`/`1INCH`/`0X0` pass through unchanged.
+  `WalletMyEtherWallet`, `Exchange1inch`. `PascalCase` only uppercases the first letter of each
+  `-`-delimited segment, so all-caps tickers like `BTC`/`1INCH`/`0X0` pass through unchanged, and a
+  leading digit leaves the rest of its segment as-is (`1inch` → `1inch`).
 - **Enum case name** = `category` (lowercase) + `PascalCase(name)`.
   Examples: `tokenBTC`, `token1INCH`, `networkEthereum`, `networkAmeChain`,
-  `walletMyEtherWallet`, `exchange1Inch`.
+  `walletMyEtherWallet`, `exchange1inch`.
 - **Raw value** = `"<category>/<name>"` preserving upstream casing.
   Examples: `"token/BTC"`, `"network/ethereum"`, `"wallet/phantom"`, `"exchange/1inch"`.
 
