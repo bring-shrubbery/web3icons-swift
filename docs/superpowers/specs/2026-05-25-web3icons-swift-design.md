@@ -47,9 +47,11 @@ holes correctly. Concretely this means:
 - Snapshot tests render via `CGContext.fillPath()` (non-zero), not `strokePath()`.
 - Of the ~1,810 mono icons, only ~2 contain any `stroke=` in their SVG; `svg-to-swiftui-core`
   converts those strokes to baked stroked sub-paths at generation time, so they still render via fill.
-- `Sources/Web3Icons/PathExtensions.swift` (the `cwStrokedPath`/`ccwStrokedPath` helpers) is carried
-  over **verbatim** from lucide-swift as a safety net for any generator output that calls them. It is
-  harmless if unused.
+- `Sources/Web3Icons/PathExtensions.swift` is a port of the svg-to-swiftui visual-tests template,
+  adapted to `SwiftUI.Path`. It provides the helpers the generated icons call: `addReversedPath(_:)`
+  (used by **every fill icon with holes** to reverse inner contours for non-zero winding) plus
+  `cwStrokedPath`/`ccwStrokedPath` (used by the few stroke icons). These are required for the package
+  to compile — `addReversedPath` is not a built-in `Path` method.
 
 ## Public API
 
@@ -186,7 +188,7 @@ web3icons-swift/
     Web3Icons.swift            # View
     Web3Icon.swift             # GENERATED enum + makePath
     Web3IconsVersion.swift     # GENERATED version constant
-    PathExtensions.swift       # ported verbatim
+    PathExtensions.swift       # addReversedPath + cw/ccwStrokedPath helpers
     Icons/<StructName>.swift   # GENERATED, ~1,810 files
   Tests/Web3IconsTests/
     Web3IconsViewTests.swift

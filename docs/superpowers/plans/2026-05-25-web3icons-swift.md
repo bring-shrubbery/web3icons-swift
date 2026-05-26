@@ -21,7 +21,7 @@ Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
 
 ## Task 1: Buildable package skeleton
 
-Establish a package that builds and tests green before any icons exist. `PathExtensions.swift` (carried verbatim from lucide-swift) is added now because some generated icons — e.g. `apechain` — call its `cwStrokedPath`/`ccwStrokedPath` helpers, so it must compile alongside the generated output in Task 3.
+Establish a package that builds and tests green before any icons exist. `PathExtensions.swift` (a port of the svg-to-swiftui visual-tests template adapted to SwiftUI.Path) is added now because the generated icons call its helpers: fill icons call `addReversedPath(_:)` to cut evenodd holes, and the few stroke icons (e.g. `apechain`) call `cwStrokedPath`/`ccwStrokedPath`. It must compile alongside the generated output in Task 3.
 
 **Files:**
 - Create: `Package.swift`
@@ -102,20 +102,87 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-- [ ] **Step 4: Create `Sources/Web3Icons/PathExtensions.swift`** (verbatim port from lucide-swift)
+- [ ] **Step 4: Create `Sources/Web3Icons/PathExtensions.swift`** (port of the svg-to-swiftui visual-tests template, adapted to SwiftUI.Path)
 
 ```swift
 import SwiftUI
 import CoreGraphics
 
-// Helpers ported from the svg-to-swiftui project's visual-tests template:
+// Path helpers ported from the svg-to-swiftui project's visual-tests template,
+// adapted to SwiftUI.Path:
 // https://github.com/bring-shrubbery/SVG-to-SwiftUI/blob/main/packages/svg-to-swiftui-core/visual-tests/swift-template.swift
 //
-// The generator emits calls to `cwStrokedPath(_:)` and `ccwStrokedPath(_:)`
-// for any icon whose source SVG uses strokes (e.g. the `apechain` network),
-// so consumers must provide these on Path.
+// The generator emits calls to these on the icons it produces:
+//   - `addReversedPath(_:)` for fill icons, to cut evenodd holes via reversed
+//     inner contours (so the default non-zero winding fill renders them);
+//   - `cwStrokedPath(_:)` / `ccwStrokedPath(_:)` for the few icons whose source
+//     SVG uses strokes (e.g. the `apechain` network).
 
 extension Path {
+    /// Appends `other` with each of its subpaths reversed. Used to convert
+    /// evenodd holes into reversed contours that read as holes under the
+    /// default non-zero winding fill.
+    mutating func addReversedPath(_ other: Path) {
+        struct Elem {
+            var type: CGPathElementType
+            var points: [CGPoint]
+        }
+        var elements: [Elem] = []
+        other.cgPath.applyWithBlock { ptr in
+            let e = ptr.pointee
+            var pts: [CGPoint] = []
+            switch e.type {
+            case .moveToPoint: pts = [e.points[0]]
+            case .addLineToPoint: pts = [e.points[0]]
+            case .addQuadCurveToPoint: pts = [e.points[0], e.points[1]]
+            case .addCurveToPoint: pts = [e.points[0], e.points[1], e.points[2]]
+            case .closeSubpath: break
+            @unknown default: break
+            }
+            elements.append(Elem(type: e.type, points: pts))
+        }
+        var idx = 0
+        while idx < elements.count {
+            guard elements[idx].type == .moveToPoint else { idx += 1; continue }
+            let subStart = elements[idx].points[0]
+            var trail: [CGPoint] = [subStart]
+            var cmds: [Elem] = []
+            var hasClose = false
+            var k = idx + 1
+            while k < elements.count && elements[k].type != .moveToPoint {
+                let e = elements[k]
+                switch e.type {
+                case .addLineToPoint:
+                    trail.append(e.points[0]); cmds.append(e)
+                case .addQuadCurveToPoint:
+                    trail.append(e.points[1]); cmds.append(e)
+                case .addCurveToPoint:
+                    trail.append(e.points[2]); cmds.append(e)
+                case .closeSubpath:
+                    hasClose = true
+                default: break
+                }
+                k += 1
+            }
+            move(to: trail[trail.count - 1])
+            for ri in stride(from: cmds.count - 1, through: 0, by: -1) {
+                let cmd = cmds[ri]
+                let toPt = trail[ri]
+                switch cmd.type {
+                case .addLineToPoint:
+                    addLine(to: toPt)
+                case .addQuadCurveToPoint:
+                    addQuadCurve(to: toPt, control: cmd.points[0])
+                case .addCurveToPoint:
+                    addCurve(to: toPt, control1: cmd.points[1], control2: cmd.points[0])
+                default: break
+                }
+            }
+            if hasClose { closeSubpath() }
+            idx = k
+        }
+    }
+
     func cwStrokedPath(_ style: StrokeStyle) -> Path {
         strokedNormalized(style, targetClockwise: true)
     }
@@ -125,7 +192,7 @@ extension Path {
     }
 
     private func strokedNormalized(_ style: StrokeStyle, targetClockwise: Bool) -> Path {
-        let stroked = cgPath.copy(
+        let strokedCG = cgPath.copy(
             strokingWithWidth: style.lineWidth,
             lineCap: style.lineCap,
             lineJoin: style.lineJoin,
@@ -133,109 +200,41 @@ extension Path {
         )
 
         var subpathCount = 0
-        stroked.applyWithBlock { ptr in
+        strokedCG.applyWithBlock { ptr in
             if ptr.pointee.type == .moveToPoint { subpathCount += 1 }
         }
 
+        let stroked = Path(strokedCG)
+
         // Multi-contour outlines (from closed source paths) have intentional
         // inner contours whose winding must be preserved.
-        guard subpathCount == 1 else { return Path(stroked) }
+        guard subpathCount == 1 else { return stroked }
 
         // Sample anchor points and compute the signed area to determine winding.
         var trail: [CGPoint] = []
-        stroked.applyWithBlock { ptr in
-            let elem = ptr.pointee
-            switch elem.type {
-            case .moveToPoint:        trail.append(elem.points[0])
-            case .addLineToPoint:     trail.append(elem.points[0])
-            case .addQuadCurveToPoint: trail.append(elem.points[1])
-            case .addCurveToPoint:    trail.append(elem.points[2])
+        strokedCG.applyWithBlock { ptr in
+            let e = ptr.pointee
+            switch e.type {
+            case .moveToPoint:         trail.append(e.points[0])
+            case .addLineToPoint:      trail.append(e.points[0])
+            case .addQuadCurveToPoint: trail.append(e.points[1])
+            case .addCurveToPoint:     trail.append(e.points[2])
             default: break
             }
         }
-
-        var signedArea: CGFloat = 0
+        var area: CGFloat = 0
         for i in 0..<trail.count {
             let j = (i + 1) % trail.count
-            signedArea += trail[i].x * trail[j].y - trail[j].x * trail[i].y
+            area += trail[i].x * trail[j].y - trail[j].x * trail[i].y
         }
 
-        let isClockwise = signedArea > 0
-        if isClockwise == targetClockwise { return Path(stroked) }
-        return Path(reverseCGPath(stroked))
+        let isClockwise = area > 0
+        if isClockwise == targetClockwise { return stroked }
+
+        var reversed = Path()
+        reversed.addReversedPath(stroked)
+        return reversed
     }
-}
-
-private func reverseCGPath(_ path: CGPath) -> CGPath {
-    struct Element {
-        var type: CGPathElementType
-        var points: [CGPoint]
-    }
-    var elements: [Element] = []
-    path.applyWithBlock { ptr in
-        let elem = ptr.pointee
-        var pts: [CGPoint] = []
-        switch elem.type {
-        case .moveToPoint, .addLineToPoint:
-            pts = [elem.points[0]]
-        case .addQuadCurveToPoint:
-            pts = [elem.points[0], elem.points[1]]
-        case .addCurveToPoint:
-            pts = [elem.points[0], elem.points[1], elem.points[2]]
-        case .closeSubpath:
-            break
-        @unknown default:
-            break
-        }
-        elements.append(Element(type: elem.type, points: pts))
-    }
-
-    let result = CGMutablePath()
-    var idx = 0
-    while idx < elements.count {
-        guard elements[idx].type == .moveToPoint else { idx += 1; continue }
-
-        var trail: [CGPoint] = [elements[idx].points[0]]
-        var commands: [Element] = []
-        var hasClose = false
-        var k = idx + 1
-
-        while k < elements.count && elements[k].type != .moveToPoint {
-            let elem = elements[k]
-            switch elem.type {
-            case .addLineToPoint:
-                trail.append(elem.points[0]); commands.append(elem)
-            case .addQuadCurveToPoint:
-                trail.append(elem.points[1]); commands.append(elem)
-            case .addCurveToPoint:
-                trail.append(elem.points[2]); commands.append(elem)
-            case .closeSubpath:
-                hasClose = true
-            default:
-                break
-            }
-            k += 1
-        }
-
-        result.move(to: trail[trail.count - 1])
-        for ri in stride(from: commands.count - 1, through: 0, by: -1) {
-            let cmd = commands[ri]
-            let toPoint = trail[ri]
-            switch cmd.type {
-            case .addLineToPoint:
-                result.addLine(to: toPoint)
-            case .addQuadCurveToPoint:
-                result.addQuadCurve(to: toPoint, control: cmd.points[0])
-            case .addCurveToPoint:
-                result.addCurve(to: toPoint, control1: cmd.points[1], control2: cmd.points[0])
-            default:
-                break
-            }
-        }
-        if hasClose { result.closeSubpath() }
-        idx = k
-    }
-    return result
 }
 ```
 
