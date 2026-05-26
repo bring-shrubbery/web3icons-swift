@@ -1,0 +1,55 @@
+// GENERATED FROM @web3icons/core@4.0.51 — DO NOT EDIT
+import SwiftUI
+
+internal struct TokenSDT: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let width = rect.size.width
+        let height = rect.size.height
+        var _hole2 = Path()
+        _hole2.move(to: CGPoint(x: 0.4595*width, y: 0.2743333333*height))
+        _hole2.addCurve(to: CGPoint(x: 0.3828333333*width, y: 0.373625*height), control1: CGPoint(x: 0.4150833333*width, y: 0.2866666667*height), control2: CGPoint(x: 0.3828333333*width, y: 0.326625*height))
+        _hole2.addCurve(to: CGPoint(x: 0.4595*width, y: 0.4729166667*height), control1: CGPoint(x: 0.3828333333*width, y: 0.420625*height), control2: CGPoint(x: 0.4150833333*width, y: 0.4605833333*height))
+        _hole2.addLine(to: CGPoint(x: 0.4765833333*width, y: 0.4776666667*height))
+        _hole2.addLine(to: CGPoint(x: 0.4765833333*width, y: 0.5232916667*height))
+        _hole2.addCurve(to: CGPoint(x: 0.42975*width, y: 0.5117916667*height), control1: CGPoint(x: 0.458375*width, y: 0.5200416667*height), control2: CGPoint(x: 0.4480833333*width, y: 0.5174583333*height))
+        _hole2.addCurve(to: CGPoint(x: 0.336*width, y: 0.373625*height), control1: CGPoint(x: 0.3747916667*width, y: 0.4892916667*height), control2: CGPoint(x: 0.336*width, y: 0.4360416667*height))
+        _hole2.addCurve(to: CGPoint(x: 0.42975*width, y: 0.2354166667*height), control1: CGPoint(x: 0.336*width, y: 0.3112083333*height), control2: CGPoint(x: 0.3747916667*width, y: 0.2579166667*height))
+        _hole2.addLine(to: CGPoint(x: 0.42975*width, y: 0.178875*height))
+        _hole2.addCurve(to: CGPoint(x: 0.1719166667*width, y: 0.5*height), control1: CGPoint(x: 0.28275*width, y: 0.21*height), control2: CGPoint(x: 0.1719166667*width, y: 0.3417083333*height))
+        _hole2.addCurve(to: CGPoint(x: 0.4296666667*width, y: 0.821125*height), control1: CGPoint(x: 0.1719166667*width, y: 0.6582916667*height), control2: CGPoint(x: 0.28275*width, y: 0.79*height))
+        _hole2.addLine(to: CGPoint(x: 0.4296666667*width, y: 0.8207916667*height))
+        _hole2.addLine(to: CGPoint(x: 0.4384166667*width, y: 0.8225*height))
+        _hole2.addCurve(to: CGPoint(x: 0.4765416667*width, y: 0.8284166667*height), control1: CGPoint(x: 0.4509804868*width, y: 0.8253115047*height), control2: CGPoint(x: 0.463716677*width, y: 0.8272880501*height))
+        _hole2.addLine(to: CGPoint(x: 0.4765416667*width, y: 0.875*height))
+        _hole2.addLine(to: CGPoint(x: 0.4501666667*width, y: 0.8716666667*height))
+        _hole2.addCurve(to: CGPoint(x: 0.125*width, y: 0.5*height), control1: CGPoint(x: 0.2665416667*width, y: 0.8485833333*height), control2: CGPoint(x: 0.125*width, y: 0.6907083333*height))
+        _hole2.addCurve(to: CGPoint(x: 0.4501666667*width, y: 0.1283333333*height), control1: CGPoint(x: 0.125*width, y: 0.3092916667*height), control2: CGPoint(x: 0.2665416667*width, y: 0.1514583333*height))
+        _hole2.addLine(to: CGPoint(x: 0.4765416667*width, y: 0.125*height))
+        _hole2.addLine(to: CGPoint(x: 0.4765416667*width, y: 0.2695416667*height))
+        _hole2.closeSubpath()
+        _hole2.move(to: CGPoint(x: 0.5405*width, y: 0.7256666667*height))
+        _hole2.addCurve(to: CGPoint(x: 0.6171666667*width, y: 0.626375*height), control1: CGPoint(x: 0.5849166667*width, y: 0.7133333333*height), control2: CGPoint(x: 0.6171666667*width, y: 0.673375*height))
+        _hole2.addCurve(to: CGPoint(x: 0.5405*width, y: 0.5270833333*height), control1: CGPoint(x: 0.6171666667*width, y: 0.579375*height), control2: CGPoint(x: 0.5849166667*width, y: 0.5394166667*height))
+        _hole2.addLine(to: CGPoint(x: 0.5234166667*width, y: 0.5223333333*height))
+        _hole2.addLine(to: CGPoint(x: 0.5234166667*width, y: 0.4767083333*height))
+        _hole2.addCurve(to: CGPoint(x: 0.57025*width, y: 0.4882083333*height), control1: CGPoint(x: 0.5392849575*width, y: 0.4794058986*height), control2: CGPoint(x: 0.5549370194*width, y: 0.4832492875*height))
+        _hole2.addCurve(to: CGPoint(x: 0.664*width, y: 0.626375*height), control1: CGPoint(x: 0.6252083333*width, y: 0.5107083333*height), control2: CGPoint(x: 0.664*width, y: 0.5639583333*height))
+        _hole2.addCurve(to: CGPoint(x: 0.57025*width, y: 0.7645833333*height), control1: CGPoint(x: 0.664*width, y: 0.6887916667*height), control2: CGPoint(x: 0.6252083333*width, y: 0.7420833333*height))
+        _hole2.addLine(to: CGPoint(x: 0.57025*width, y: 0.821125*height))
+        _hole2.addCurve(to: CGPoint(x: 0.8280833333*width, y: 0.5*height), control1: CGPoint(x: 0.71725*width, y: 0.79*height), control2: CGPoint(x: 0.8280833333*width, y: 0.6583333333*height))
+        _hole2.addCurve(to: CGPoint(x: 0.5703333333*width, y: 0.1789166667*height), control1: CGPoint(x: 0.8280833333*width, y: 0.3416666667*height), control2: CGPoint(x: 0.71725*width, y: 0.21*height))
+        _hole2.addLine(to: CGPoint(x: 0.5703333333*width, y: 0.1792083333*height))
+        _hole2.addLine(to: CGPoint(x: 0.5615833333*width, y: 0.1774583333*height))
+        _hole2.addCurve(to: CGPoint(x: 0.5234583333*width, y: 0.1715833333*height), control1: CGPoint(x: 0.5481666667*width, y: 0.1747916667*height), control2: CGPoint(x: 0.5369166667*width, y: 0.1725416667*height))
+        _hole2.addLine(to: CGPoint(x: 0.5234583333*width, y: 0.125*height))
+        _hole2.addLine(to: CGPoint(x: 0.5498333333*width, y: 0.1283333333*height))
+        _hole2.addCurve(to: CGPoint(x: 0.875*width, y: 0.5*height), control1: CGPoint(x: 0.7334583333*width, y: 0.1514166667*height), control2: CGPoint(x: 0.875*width, y: 0.3092916667*height))
+        _hole2.addCurve(to: CGPoint(x: 0.5498333333*width, y: 0.8716666667*height), control1: CGPoint(x: 0.875*width, y: 0.6907083333*height), control2: CGPoint(x: 0.7334166667*width, y: 0.8485833333*height))
+        _hole2.addLine(to: CGPoint(x: 0.5234583333*width, y: 0.875*height))
+        _hole2.addLine(to: CGPoint(x: 0.5234583333*width, y: 0.7304583333*height))
+        _hole2.closeSubpath()
+        path.addReversedPath(_hole2)
+        return path
+    }
+}

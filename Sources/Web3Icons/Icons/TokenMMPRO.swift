@@ -1,0 +1,56 @@
+// GENERATED FROM @web3icons/core@4.0.51 — DO NOT EDIT
+import SwiftUI
+
+internal struct TokenMMPRO: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let width = rect.size.width
+        let height = rect.size.height
+        var _hole2 = Path()
+        _hole2.move(to: CGPoint(x: 0.6964166667*width, y: 0.375*height))
+        _hole2.addLine(to: CGPoint(x: 0.6964166667*width, y: 0.625*height))
+        _hole2.addLine(to: CGPoint(x: 0.66075*width, y: 0.625*height))
+        _hole2.addLine(to: CGPoint(x: 0.66075*width, y: 0.767875*height))
+        _hole2.addLine(to: CGPoint(x: 0.6428333333*width, y: 0.767875*height))
+        _hole2.addLine(to: CGPoint(x: 0.6428333333*width, y: 0.625*height))
+        _hole2.addLine(to: CGPoint(x: 0.607125*width, y: 0.625*height))
+        _hole2.addLine(to: CGPoint(x: 0.607125*width, y: 0.4829166667*height))
+        _hole2.addLine(to: CGPoint(x: 0.5535833333*width, y: 0.5454166667*height))
+        _hole2.addLine(to: CGPoint(x: 0.5535833333*width, y: 0.6964166667*height))
+        _hole2.addLine(to: CGPoint(x: 0.5089166667*width, y: 0.6964166667*height))
+        _hole2.addLine(to: CGPoint(x: 0.5089166667*width, y: 0.875*height))
+        _hole2.addLine(to: CGPoint(x: 0.4910833333*width, y: 0.875*height))
+        _hole2.addLine(to: CGPoint(x: 0.4910833333*width, y: 0.6964166667*height))
+        _hole2.addLine(to: CGPoint(x: 0.4464166667*width, y: 0.6964166667*height))
+        _hole2.addLine(to: CGPoint(x: 0.4464166667*width, y: 0.5451666667*height))
+        _hole2.addLine(to: CGPoint(x: 0.3928333333*width, y: 0.4826666667*height))
+        _hole2.addLine(to: CGPoint(x: 0.3928333333*width, y: 0.625*height))
+        _hole2.addLine(to: CGPoint(x: 0.357125*width, y: 0.625*height))
+        _hole2.addLine(to: CGPoint(x: 0.357125*width, y: 0.767875*height))
+        _hole2.addLine(to: CGPoint(x: 0.3392916667*width, y: 0.767875*height))
+        _hole2.addLine(to: CGPoint(x: 0.3392916667*width, y: 0.625*height))
+        _hole2.addLine(to: CGPoint(x: 0.3035833333*width, y: 0.625*height))
+        _hole2.addLine(to: CGPoint(x: 0.3035833333*width, y: 0.375*height))
+        _hole2.addLine(to: CGPoint(x: 0.3392916667*width, y: 0.375*height))
+        _hole2.addLine(to: CGPoint(x: 0.3392916667*width, y: 0.2857083333*height))
+        _hole2.addLine(to: CGPoint(x: 0.357125*width, y: 0.2857083333*height))
+        _hole2.addLine(to: CGPoint(x: 0.357125*width, y: 0.375*height))
+        _hole2.addLine(to: CGPoint(x: 0.3919583333*width, y: 0.375*height))
+        _hole2.addLine(to: CGPoint(x: 0.4464166667*width, y: 0.441625*height))
+        _hole2.addLine(to: CGPoint(x: 0.4464166667*width, y: 0.267875*height))
+        _hole2.addLine(to: CGPoint(x: 0.4910833333*width, y: 0.267875*height))
+        _hole2.addLine(to: CGPoint(x: 0.4910833333*width, y: 0.125*height))
+        _hole2.addLine(to: CGPoint(x: 0.5089166667*width, y: 0.125*height))
+        _hole2.addLine(to: CGPoint(x: 0.5089166667*width, y: 0.267875*height))
+        _hole2.addLine(to: CGPoint(x: 0.5535833333*width, y: 0.267875*height))
+        _hole2.addLine(to: CGPoint(x: 0.5535833333*width, y: 0.441625*height))
+        _hole2.addLine(to: CGPoint(x: 0.6080416667*width, y: 0.375*height))
+        _hole2.addLine(to: CGPoint(x: 0.642875*width, y: 0.375*height))
+        _hole2.addLine(to: CGPoint(x: 0.642875*width, y: 0.2857083333*height))
+        _hole2.addLine(to: CGPoint(x: 0.6607083333*width, y: 0.2857083333*height))
+        _hole2.addLine(to: CGPoint(x: 0.6607083333*width, y: 0.375*height))
+        _hole2.closeSubpath()
+        path.addReversedPath(_hole2)
+        return path
+    }
+}
