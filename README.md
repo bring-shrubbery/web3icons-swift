@@ -5,7 +5,7 @@ All ~1,810 **mono** [web3icons](https://github.com/0xa3k5/web3icons) — crypto 
 Each icon is a generated `SwiftUI.Shape` — no SVG library, no XML parser, no image assets. The library is a thin View on top of `Path`, and your icons participate in SwiftUI like any other shape: scale to any size, take color from `.foregroundStyle`, animate, mask, combine.
 
 <p align="center">
-  <img src="assets/demo.gif" alt="web3icons-swift demo" width="640">
+  <img src="assets/demo.gif" alt="web3icons-swift demo" width="800">
 </p>
 
 ## Why this library
