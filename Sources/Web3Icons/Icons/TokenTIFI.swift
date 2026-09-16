@@ -1,4 +1,4 @@
-// GENERATED FROM @web3icons/core@4.0.51 — DO NOT EDIT
+// GENERATED FROM @web3icons/core@4.0.56 — DO NOT EDIT
 import SwiftUI
 
 internal struct TokenTIFI: Shape {
