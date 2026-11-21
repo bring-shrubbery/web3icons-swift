@@ -1,9 +1,10 @@
-// GENERATED FROM @web3icons/core@4.0.51 — DO NOT EDIT
+// GENERATED FROM @web3icons/core@4.0.61 — DO NOT EDIT
 import SwiftUI
 
 public enum Web3Icon: String, CaseIterable, Sendable {
     case exchange1inch = "exchange/1inch"
     case exchangeAevo = "exchange/aevo"
+    case exchangeAquarius = "exchange/aquarius"
     case exchangeBalancer = "exchange/balancer"
     case exchangeBancor = "exchange/bancor"
     case exchangeBinance = "exchange/binance"
@@ -13,6 +14,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case exchangeBtcturk = "exchange/btcturk"
     case exchangeBybit = "exchange/bybit"
     case exchangeCoinbase = "exchange/coinbase"
+    case exchangeCoinex = "exchange/coinex"
     case exchangeCowswap = "exchange/cowswap"
     case exchangeCryptoCom = "exchange/crypto-com"
     case exchangeGateIo = "exchange/gate-io"
@@ -25,6 +27,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case exchangeParaSwap = "exchange/para-swap"
     case exchangeParadex = "exchange/paradex"
     case exchangeParibu = "exchange/paribu"
+    case exchangeSoroswap = "exchange/soroswap"
     case exchangeSushiswap = "exchange/sushiswap"
     case exchangeSwissborg = "exchange/swissborg"
     case exchangeUniswap = "exchange/uniswap"
@@ -33,6 +36,8 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case networkAcala = "network/acala"
     case networkAlgorand = "network/algorand"
     case networkAmeChain = "network/ame-chain"
+    case networkAnimica = "network/animica"
+    case networkAnubis = "network/anubis"
     case networkApechain = "network/apechain"
     case networkApexLayer = "network/apex-layer"
     case networkAptos = "network/aptos"
@@ -56,6 +61,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case networkBoba = "network/boba"
     case networkBotanix = "network/botanix"
     case networkBouncebit = "network/bouncebit"
+    case networkCanton = "network/canton"
     case networkCardano = "network/cardano"
     case networkCelo = "network/celo"
     case networkChiliz = "network/chiliz"
@@ -86,6 +92,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case networkFio = "network/fio"
     case networkFlare = "network/flare"
     case networkFluence = "network/fluence"
+    case networkFluent = "network/fluent"
     case networkFraxtal = "network/fraxtal"
     case networkFuel = "network/fuel"
     case networkFuse = "network/fuse"
@@ -170,9 +177,11 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case networkProm = "network/prom"
     case networkPulsechain = "network/pulsechain"
     case networkPush = "network/push"
+    case networkRabbit = "network/rabbit"
     case networkRari = "network/rari"
     case networkRei = "network/rei"
     case networkReya = "network/reya"
+    case networkRobinhood = "network/robinhood"
     case networkRollux = "network/rollux"
     case networkRonin = "network/ronin"
     case networkRootstock = "network/rootstock"
@@ -254,6 +263,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenACX = "token/ACX"
     case tokenADA = "token/ADA"
     case tokenADAPAD = "token/ADAPAD"
+    case tokenADI = "token/ADI"
     case tokenAGIX = "token/AGIX"
     case tokenAGLA = "token/AGLA"
     case tokenAGRS = "token/AGRS"
@@ -268,6 +278,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenAIT = "token/AIT"
     case tokenAKT = "token/AKT"
     case tokenALCX = "token/ALCX"
+    case tokenALEO = "token/ALEO"
     case tokenALEPH = "token/ALEPH"
     case tokenALEX = "token/ALEX"
     case tokenALGB = "token/ALGB"
@@ -353,6 +364,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenBITCI = "token/BITCI"
     case tokenBLD = "token/BLD"
     case tokenBLID = "token/BLID"
+    case tokenBLND = "token/BLND"
     case tokenBLOCK = "token/BLOCK"
     case tokenBLOX = "token/BLOX"
     case tokenBLP = "token/BLP"
@@ -411,6 +423,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenCAS = "token/CAS"
     case tokenCAST = "token/CAST"
     case tokenCATHEON = "token/CATHEON"
+    case tokenCBBTC = "token/CBBTC"
     case tokenCBETH = "token/CBETH"
     case tokenCBTC = "token/CBTC"
     case tokenCBX = "token/CBX"
@@ -547,6 +560,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenDODO = "token/DODO"
     case tokenDOG = "token/DOG"
     case tokenDOGA = "token/DOGA"
+    case tokenDOGE = "token/DOGE"
     case tokenDOLA = "token/DOLA"
     case tokenDOME = "token/DOME"
     case tokenDOMI = "token/DOMI"
@@ -618,6 +632,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenEUL = "token/EUL"
     case tokenEUNO = "token/EUNO"
     case tokenEURC = "token/EURC"
+    case tokenEURE = "token/EURE"
     case tokenEUROE = "token/EUROE"
     case tokenEURS = "token/EURS"
     case tokenEURT = "token/EURT"
@@ -655,6 +670,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenFLUX = "token/FLUX"
     case tokenFLX = "token/FLX"
     case tokenFNSA = "token/FNSA"
+    case tokenFOGO = "token/FOGO"
     case tokenFOLD = "token/FOLD"
     case tokenFOR = "token/FOR"
     case tokenFORE = "token/FORE"
@@ -731,6 +747,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenGRAI = "token/GRAI"
     case tokenGRAIL = "token/GRAIL"
     case tokenGRAIN = "token/GRAIN"
+    case tokenGRAM = "token/GRAM"
     case tokenGRAV = "token/GRAV"
     case tokenGRC = "token/GRC"
     case tokenGRIN = "token/GRIN"
@@ -1109,6 +1126,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenNOS = "token/NOS"
     case tokenNPC = "token/NPC"
     case tokenNPM = "token/NPM"
+    case tokenNPRO = "token/NPRO"
     case tokenNPXS = "token/NPXS"
     case tokenNRCH = "token/NRCH"
     case tokenNRG = "token/NRG"
@@ -1595,6 +1613,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenUSH = "token/USH"
     case tokenUSN = "token/USN"
     case tokenUTK = "token/UTK"
+    case tokenUTYA = "token/UTYA"
     case tokenUW3S = "token/UW3S"
     case tokenVAB = "token/VAB"
     case tokenVAI = "token/VAI"
@@ -1687,6 +1706,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenWXT = "token/WXT"
     case tokenX2Y2 = "token/X2Y2"
     case tokenXAUR = "token/XAUR"
+    case tokenXAUT = "token/XAUT"
     case tokenXAVA = "token/XAVA"
     case tokenXCAD = "token/XCAD"
     case tokenXCFX = "token/XCFX"
@@ -1767,6 +1787,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case tokenZTG = "token/ZTG"
     case tokenZYN = "token/ZYN"
     case tokenZZ = "token/ZZ"
+    case walletAlbedo = "wallet/albedo"
     case walletAlfa1 = "wallet/alfa1"
     case walletAlphaWallet = "wallet/alpha-wallet"
     case walletArgent = "wallet/argent"
@@ -1786,6 +1807,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case walletKukai = "wallet/kukai"
     case walletLedger = "wallet/ledger"
     case walletLit = "wallet/lit"
+    case walletLobstr = "wallet/lobstr"
     case walletMultis = "wallet/multis"
     case walletMyEtherWallet = "wallet/my-ether-wallet"
     case walletObvious = "wallet/obvious"
@@ -1794,6 +1816,7 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case walletPillar = "wallet/pillar"
     case walletPortal = "wallet/portal"
     case walletRabby = "wallet/rabby"
+    case walletRabet = "wallet/rabet"
     case walletRainbow = "wallet/rainbow"
     case walletRonin = "wallet/ronin"
     case walletSafe = "wallet/safe"
@@ -1802,13 +1825,16 @@ public enum Web3Icon: String, CaseIterable, Sendable {
     case walletSolflare = "wallet/solflare"
     case walletSoul = "wallet/soul"
     case walletSquads = "wallet/squads"
+    case walletStella = "wallet/stella"
     case walletTokenPocket = "wallet/token-pocket"
     case walletTrezor = "wallet/trezor"
     case walletTrust = "wallet/trust"
     case walletUnipass = "wallet/unipass"
+    case walletVarial = "wallet/varial"
     case walletVenly = "wallet/venly"
     case walletWallet3 = "wallet/wallet-3"
     case walletWalletConnect = "wallet/wallet-connect"
+    case walletXbull = "wallet/xbull"
     case walletXdefi = "wallet/xdefi"
     case walletZengo = "wallet/zengo"
     case walletZerion = "wallet/zerion"
@@ -1819,6 +1845,7 @@ extension Web3Icon {
         switch self {
         case .exchange1inch: return Exchange1inch().path(in: rect)
         case .exchangeAevo: return ExchangeAevo().path(in: rect)
+        case .exchangeAquarius: return ExchangeAquarius().path(in: rect)
         case .exchangeBalancer: return ExchangeBalancer().path(in: rect)
         case .exchangeBancor: return ExchangeBancor().path(in: rect)
         case .exchangeBinance: return ExchangeBinance().path(in: rect)
@@ -1828,6 +1855,7 @@ extension Web3Icon {
         case .exchangeBtcturk: return ExchangeBtcturk().path(in: rect)
         case .exchangeBybit: return ExchangeBybit().path(in: rect)
         case .exchangeCoinbase: return ExchangeCoinbase().path(in: rect)
+        case .exchangeCoinex: return ExchangeCoinex().path(in: rect)
         case .exchangeCowswap: return ExchangeCowswap().path(in: rect)
         case .exchangeCryptoCom: return ExchangeCryptoCom().path(in: rect)
         case .exchangeGateIo: return ExchangeGateIo().path(in: rect)
@@ -1840,6 +1868,7 @@ extension Web3Icon {
         case .exchangeParaSwap: return ExchangeParaSwap().path(in: rect)
         case .exchangeParadex: return ExchangeParadex().path(in: rect)
         case .exchangeParibu: return ExchangeParibu().path(in: rect)
+        case .exchangeSoroswap: return ExchangeSoroswap().path(in: rect)
         case .exchangeSushiswap: return ExchangeSushiswap().path(in: rect)
         case .exchangeSwissborg: return ExchangeSwissborg().path(in: rect)
         case .exchangeUniswap: return ExchangeUniswap().path(in: rect)
@@ -1848,6 +1877,8 @@ extension Web3Icon {
         case .networkAcala: return NetworkAcala().path(in: rect)
         case .networkAlgorand: return NetworkAlgorand().path(in: rect)
         case .networkAmeChain: return NetworkAmeChain().path(in: rect)
+        case .networkAnimica: return NetworkAnimica().path(in: rect)
+        case .networkAnubis: return NetworkAnubis().path(in: rect)
         case .networkApechain: return NetworkApechain().path(in: rect)
         case .networkApexLayer: return NetworkApexLayer().path(in: rect)
         case .networkAptos: return NetworkAptos().path(in: rect)
@@ -1871,6 +1902,7 @@ extension Web3Icon {
         case .networkBoba: return NetworkBoba().path(in: rect)
         case .networkBotanix: return NetworkBotanix().path(in: rect)
         case .networkBouncebit: return NetworkBouncebit().path(in: rect)
+        case .networkCanton: return NetworkCanton().path(in: rect)
         case .networkCardano: return NetworkCardano().path(in: rect)
         case .networkCelo: return NetworkCelo().path(in: rect)
         case .networkChiliz: return NetworkChiliz().path(in: rect)
@@ -1901,6 +1933,7 @@ extension Web3Icon {
         case .networkFio: return NetworkFio().path(in: rect)
         case .networkFlare: return NetworkFlare().path(in: rect)
         case .networkFluence: return NetworkFluence().path(in: rect)
+        case .networkFluent: return NetworkFluent().path(in: rect)
         case .networkFraxtal: return NetworkFraxtal().path(in: rect)
         case .networkFuel: return NetworkFuel().path(in: rect)
         case .networkFuse: return NetworkFuse().path(in: rect)
@@ -1985,9 +2018,11 @@ extension Web3Icon {
         case .networkProm: return NetworkProm().path(in: rect)
         case .networkPulsechain: return NetworkPulsechain().path(in: rect)
         case .networkPush: return NetworkPush().path(in: rect)
+        case .networkRabbit: return NetworkRabbit().path(in: rect)
         case .networkRari: return NetworkRari().path(in: rect)
         case .networkRei: return NetworkRei().path(in: rect)
         case .networkReya: return NetworkReya().path(in: rect)
+        case .networkRobinhood: return NetworkRobinhood().path(in: rect)
         case .networkRollux: return NetworkRollux().path(in: rect)
         case .networkRonin: return NetworkRonin().path(in: rect)
         case .networkRootstock: return NetworkRootstock().path(in: rect)
@@ -2069,6 +2104,7 @@ extension Web3Icon {
         case .tokenACX: return TokenACX().path(in: rect)
         case .tokenADA: return TokenADA().path(in: rect)
         case .tokenADAPAD: return TokenADAPAD().path(in: rect)
+        case .tokenADI: return TokenADI().path(in: rect)
         case .tokenAGIX: return TokenAGIX().path(in: rect)
         case .tokenAGLA: return TokenAGLA().path(in: rect)
         case .tokenAGRS: return TokenAGRS().path(in: rect)
@@ -2083,6 +2119,7 @@ extension Web3Icon {
         case .tokenAIT: return TokenAIT().path(in: rect)
         case .tokenAKT: return TokenAKT().path(in: rect)
         case .tokenALCX: return TokenALCX().path(in: rect)
+        case .tokenALEO: return TokenALEO().path(in: rect)
         case .tokenALEPH: return TokenALEPH().path(in: rect)
         case .tokenALEX: return TokenALEX().path(in: rect)
         case .tokenALGB: return TokenALGB().path(in: rect)
@@ -2168,6 +2205,7 @@ extension Web3Icon {
         case .tokenBITCI: return TokenBITCI().path(in: rect)
         case .tokenBLD: return TokenBLD().path(in: rect)
         case .tokenBLID: return TokenBLID().path(in: rect)
+        case .tokenBLND: return TokenBLND().path(in: rect)
         case .tokenBLOCK: return TokenBLOCK().path(in: rect)
         case .tokenBLOX: return TokenBLOX().path(in: rect)
         case .tokenBLP: return TokenBLP().path(in: rect)
@@ -2226,6 +2264,7 @@ extension Web3Icon {
         case .tokenCAS: return TokenCAS().path(in: rect)
         case .tokenCAST: return TokenCAST().path(in: rect)
         case .tokenCATHEON: return TokenCATHEON().path(in: rect)
+        case .tokenCBBTC: return TokenCBBTC().path(in: rect)
         case .tokenCBETH: return TokenCBETH().path(in: rect)
         case .tokenCBTC: return TokenCBTC().path(in: rect)
         case .tokenCBX: return TokenCBX().path(in: rect)
@@ -2362,6 +2401,7 @@ extension Web3Icon {
         case .tokenDODO: return TokenDODO().path(in: rect)
         case .tokenDOG: return TokenDOG().path(in: rect)
         case .tokenDOGA: return TokenDOGA().path(in: rect)
+        case .tokenDOGE: return TokenDOGE().path(in: rect)
         case .tokenDOLA: return TokenDOLA().path(in: rect)
         case .tokenDOME: return TokenDOME().path(in: rect)
         case .tokenDOMI: return TokenDOMI().path(in: rect)
@@ -2433,6 +2473,7 @@ extension Web3Icon {
         case .tokenEUL: return TokenEUL().path(in: rect)
         case .tokenEUNO: return TokenEUNO().path(in: rect)
         case .tokenEURC: return TokenEURC().path(in: rect)
+        case .tokenEURE: return TokenEURE().path(in: rect)
         case .tokenEUROE: return TokenEUROE().path(in: rect)
         case .tokenEURS: return TokenEURS().path(in: rect)
         case .tokenEURT: return TokenEURT().path(in: rect)
@@ -2470,6 +2511,7 @@ extension Web3Icon {
         case .tokenFLUX: return TokenFLUX().path(in: rect)
         case .tokenFLX: return TokenFLX().path(in: rect)
         case .tokenFNSA: return TokenFNSA().path(in: rect)
+        case .tokenFOGO: return TokenFOGO().path(in: rect)
         case .tokenFOLD: return TokenFOLD().path(in: rect)
         case .tokenFOR: return TokenFOR().path(in: rect)
         case .tokenFORE: return TokenFORE().path(in: rect)
@@ -2546,6 +2588,7 @@ extension Web3Icon {
         case .tokenGRAI: return TokenGRAI().path(in: rect)
         case .tokenGRAIL: return TokenGRAIL().path(in: rect)
         case .tokenGRAIN: return TokenGRAIN().path(in: rect)
+        case .tokenGRAM: return TokenGRAM().path(in: rect)
         case .tokenGRAV: return TokenGRAV().path(in: rect)
         case .tokenGRC: return TokenGRC().path(in: rect)
         case .tokenGRIN: return TokenGRIN().path(in: rect)
@@ -2924,6 +2967,7 @@ extension Web3Icon {
         case .tokenNOS: return TokenNOS().path(in: rect)
         case .tokenNPC: return TokenNPC().path(in: rect)
         case .tokenNPM: return TokenNPM().path(in: rect)
+        case .tokenNPRO: return TokenNPRO().path(in: rect)
         case .tokenNPXS: return TokenNPXS().path(in: rect)
         case .tokenNRCH: return TokenNRCH().path(in: rect)
         case .tokenNRG: return TokenNRG().path(in: rect)
@@ -3410,6 +3454,7 @@ extension Web3Icon {
         case .tokenUSH: return TokenUSH().path(in: rect)
         case .tokenUSN: return TokenUSN().path(in: rect)
         case .tokenUTK: return TokenUTK().path(in: rect)
+        case .tokenUTYA: return TokenUTYA().path(in: rect)
         case .tokenUW3S: return TokenUW3S().path(in: rect)
         case .tokenVAB: return TokenVAB().path(in: rect)
         case .tokenVAI: return TokenVAI().path(in: rect)
@@ -3502,6 +3547,7 @@ extension Web3Icon {
         case .tokenWXT: return TokenWXT().path(in: rect)
         case .tokenX2Y2: return TokenX2Y2().path(in: rect)
         case .tokenXAUR: return TokenXAUR().path(in: rect)
+        case .tokenXAUT: return TokenXAUT().path(in: rect)
         case .tokenXAVA: return TokenXAVA().path(in: rect)
         case .tokenXCAD: return TokenXCAD().path(in: rect)
         case .tokenXCFX: return TokenXCFX().path(in: rect)
@@ -3582,6 +3628,7 @@ extension Web3Icon {
         case .tokenZTG: return TokenZTG().path(in: rect)
         case .tokenZYN: return TokenZYN().path(in: rect)
         case .tokenZZ: return TokenZZ().path(in: rect)
+        case .walletAlbedo: return WalletAlbedo().path(in: rect)
         case .walletAlfa1: return WalletAlfa1().path(in: rect)
         case .walletAlphaWallet: return WalletAlphaWallet().path(in: rect)
         case .walletArgent: return WalletArgent().path(in: rect)
@@ -3601,6 +3648,7 @@ extension Web3Icon {
         case .walletKukai: return WalletKukai().path(in: rect)
         case .walletLedger: return WalletLedger().path(in: rect)
         case .walletLit: return WalletLit().path(in: rect)
+        case .walletLobstr: return WalletLobstr().path(in: rect)
         case .walletMultis: return WalletMultis().path(in: rect)
         case .walletMyEtherWallet: return WalletMyEtherWallet().path(in: rect)
         case .walletObvious: return WalletObvious().path(in: rect)
@@ -3609,6 +3657,7 @@ extension Web3Icon {
         case .walletPillar: return WalletPillar().path(in: rect)
         case .walletPortal: return WalletPortal().path(in: rect)
         case .walletRabby: return WalletRabby().path(in: rect)
+        case .walletRabet: return WalletRabet().path(in: rect)
         case .walletRainbow: return WalletRainbow().path(in: rect)
         case .walletRonin: return WalletRonin().path(in: rect)
         case .walletSafe: return WalletSafe().path(in: rect)
@@ -3617,13 +3666,16 @@ extension Web3Icon {
         case .walletSolflare: return WalletSolflare().path(in: rect)
         case .walletSoul: return WalletSoul().path(in: rect)
         case .walletSquads: return WalletSquads().path(in: rect)
+        case .walletStella: return WalletStella().path(in: rect)
         case .walletTokenPocket: return WalletTokenPocket().path(in: rect)
         case .walletTrezor: return WalletTrezor().path(in: rect)
         case .walletTrust: return WalletTrust().path(in: rect)
         case .walletUnipass: return WalletUnipass().path(in: rect)
+        case .walletVarial: return WalletVarial().path(in: rect)
         case .walletVenly: return WalletVenly().path(in: rect)
         case .walletWallet3: return WalletWallet3().path(in: rect)
         case .walletWalletConnect: return WalletWalletConnect().path(in: rect)
+        case .walletXbull: return WalletXbull().path(in: rect)
         case .walletXdefi: return WalletXdefi().path(in: rect)
         case .walletZengo: return WalletZengo().path(in: rect)
         case .walletZerion: return WalletZerion().path(in: rect)
